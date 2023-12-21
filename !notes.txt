@@ -1,0 +1,21 @@
+Template Model MVC avec ReactJS et NodeJS
+====================
+
+Organisation des dossiers et fichiers
+-------------------------------------
+
+/api							Code source de l'application
+/client
+.gitignore
+README.md
+
+
+Liens intéressants
+------------------
+
+
+
+
+
+Install des dépendances
+-----------------------
