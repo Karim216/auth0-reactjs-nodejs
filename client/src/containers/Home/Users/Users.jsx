@@ -20,10 +20,10 @@ const Users = () => {
         <table className="mt-5 table-fixed w-full">
           <thead>
             <tr>
-              <th className="text-left">Nom</th>
-              <th className="text-left">Prénom</th>
+              <th className="text-left">Lastname</th>
+              <th className="text-left">Firstname</th>
               <th className="text-left">Email</th>
-              <th className="text-left">Date de création</th>
+              <th className="text-left">Created add</th>
               <th className="text-left"></th>
             </tr>
           </thead>
