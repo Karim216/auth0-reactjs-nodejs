@@ -6,9 +6,9 @@ const User = require('../models/user.model.js');
 // Définissez vos utilisateurs initiaux
 const initialUsers = [
   {
-    firstname: 'John',
-    lastname: 'Doe',
-    email: 'contact@karim-betkom.com',
+    firstname: 'Contact',
+    lastname: 'Me',
+    email: 'contact@gmail.com',
     password: '$2b$10$t.ppyWyymYUScNYG7BARP.SuIUiHg7te7.K42Lc.bX/G8FvsNd8oW',
   },
   {

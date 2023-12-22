@@ -25,14 +25,14 @@ const fetchAllUsersError = (error) => {
   };
 };
 
-export const getAllUsers = (accessToken) => {
+export const getAllUsers = () => {
   // const apiUrl = process.env.REACT_APP_API_BASE_URL;
   const apiUrl = "http://localhost:8082"
   return async (dispatch) => {
     dispatch(fetchAllUsersLoading());
     const config = {
       headers: {
-        Authorization: "Bearer " + accessToken,
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
     };
     try {

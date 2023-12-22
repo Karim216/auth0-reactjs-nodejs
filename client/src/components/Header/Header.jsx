@@ -27,7 +27,7 @@ const Header = ({ data, disconnect }) => {
             Disconnect
           </li>
         </ul>
-        <div className="text-blue-700 font-bold flex items-center gap-2" title={data.firstname +" "+data.lastname}><div><UserIcon color="#1d4ed8" /></div> {data.firstname +" "+data.lastname}</div>
+        <div className="text-blue-700 font-bold flex items-center gap-2" title={data.firstname +" "+ data.lastname}><div><UserIcon color="#1d4ed8" /></div> {data.email}</div>
       </nav>
     </header>
   );

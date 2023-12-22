@@ -25,21 +25,22 @@ const fetchCurrentUserError = (error) => {
   };
 };
 
-export const getUser = (accessToken) => {
-  const apiUrl = "http://localhost:8082/api"
+export const getUser = (email) => {
+  const apiUrl = "http://localhost:8082";
   // const apiUrl = process.env.REACT_APP_API_BASE_URL;
   return async (dispatch) => {
     dispatch(fetchCurrentUserLoading());
     const config = {
       headers: {
-        Authorization: "Bearer " + accessToken,
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
       },
+      params: {
+        email: email
+      }
     };
+  
     try {
-      const response = await axios.get(
-        `${apiUrl}/users/me/infos`,
-        config
-      );
+      const response = await axios.get(`${apiUrl}/users/me/infos`, config);
       dispatch(fetchCurrentUserSuccess(response.data));
       // console.log(response)
       return Promise.resolve(response.data);

@@ -5,6 +5,7 @@ const { auth } = require('express-oauth2-jwt-bearer');
 const cors = require("cors");
 require("dotenv").config();
 
+// middlewares
 const jwtCheck = auth({
   audience: 'https://node-api/',
   issuerBaseURL: 'https://dev-e6s0ch7ttbtt1yrl.us.auth0.com/',

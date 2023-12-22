@@ -110,36 +110,29 @@ exports.deleteUserById = async (req, res) => {
   }
 };
 
-// exports.getUserInfo = async (req, res) => {
+exports.getUserInfo = async (req, res) => {
 //   const bearerHeader = req.headers["authorization"];
-//   if (typeof bearerHeader !== "undefined") {
-//     const bearer = bearerHeader.split(" ");
-//     const token = bearer[1];
+  const email = req.query.email;
+  console.log(email)
+  if (typeof email !== "undefined") {
+        try {
+          let user = await User.findUserByEmail(email);
+          if (!user) {
+            res.status(404).send("User not found");
+            return;
+          }
 
-//     jwt.verify(token, config.secret, async (err, data) => {
-//       if (err) {
-//         res.sendStatus(403);
-//       } else {
-//         try {
-//           let user = await User.findUserByEmail(data.email);
-//           if (!user) {
-//             res.status(404).send("User not found");
-//             return;
-//           }
-
-//           res.json({
-//               id: user.id,
-//               email: user.email,
-//               firstname: user.firstname,
-//               lastname: user.lastname,
-//           });
-//         } catch (err) {
-//           console.error(err);
-//           res.status(500).send("Internal server error");
-//         }
-//       }
-//     });
-//   } else {
-//     res.sendStatus(403);
-//   }
-// };
+          res.json({
+              id: user.id,
+              email: user.email,
+              firstname: user.firstname,
+              lastname: user.lastname,
+          });
+        } catch (err) {
+          console.error(err);
+          res.status(500).send("Internal server error");
+        }
+  } else {
+    res.sendStatus(403);
+  }
+};

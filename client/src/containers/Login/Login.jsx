@@ -14,7 +14,7 @@ const Login = () => {
     passwordErr: "",
   });
 
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
   const inputChange = (value, name, errField) => {
     setState((prevState) => ({
